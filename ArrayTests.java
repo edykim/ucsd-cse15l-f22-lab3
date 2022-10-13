@@ -9,7 +9,6 @@ public class ArrayTests {
     assertArrayEquals(new int[]{ 3 }, input1);
 	}
 
-
   @Test
   public void testReversed() {
     int[] input1 = { };
@@ -26,9 +25,17 @@ public class ArrayTests {
   }
 
   @Test
-  public void testReversedWithArray() {
+  public void testReversedWithOddArray() {
     int[] arrayOfNumbers = { 1, 2, 3, 4, 5 };
     int[] expected = { 5, 4, 3, 2, 1 };
+    int[] actual = ArrayExamples.reversed(arrayOfNumbers);
+
+    assertArrayEquals(expected, actual);
+  }
+  @Test
+  public void testReversedWithEvenArray() {
+    int[] arrayOfNumbers = { 1, 2, 3, 4, 5, 6 };
+    int[] expected = { 6, 5, 4, 3, 2, 1 };
     int[] actual = ArrayExamples.reversed(arrayOfNumbers);
 
     assertArrayEquals(expected, actual);
@@ -61,8 +68,8 @@ public class ArrayTests {
   }
   @Test
   public void testAverageWithoutLowestWithDuplication() {
-    double[] numbers = {10, 10, 10, 10, 12};
-    double expected = 12;
+    double[] numbers = {10,10,20};
+    double expected = 15;
     double actual = ArrayExamples.averageWithoutLowest(numbers);
 
     assertEquals(expected, actual, 0);
