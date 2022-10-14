@@ -9,7 +9,7 @@ public class ListTests {
   public void shouldFilterGivenStringChecker()
   {
     List<String> words = new ArrayList<>(Arrays.asList("Hello","world","Great ocean road"));
-    List<String> expected = new ArrayList<>(Arrays.asList("Hello", "world", "Great ocean road"));
+    List<String> expected = new ArrayList<>(Arrays.asList("Hello", "Great ocean road"));
     List<String> actual = ListExamples.filter(words, new ContainsStringChecker());
 
     assertEquals(expected, actual);
